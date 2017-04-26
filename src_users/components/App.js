@@ -1,4 +1,5 @@
 import React from "react";
+import ReduxToastr from 'react-redux-toastr'
 import { connect } from "react-redux";
 import "../stylesheets/main.scss";
 
@@ -10,6 +11,16 @@ export class App extends React.Component {
     // render
     return (
       <div className="container">
+        <ReduxToastr
+          timeOut={4000}
+          newestOnTop={false}
+          preventDuplicates
+          position="bottom-right"
+          transitionIn="fadeIn"
+          transitionOut="fadeOut"
+          progressBar
+        />
+
         <div>{children}</div>
       </div>
     );
